@@ -52,16 +52,16 @@ RSpec.describe TopicsController, type: :controller do
 
   describe "POST create" do
     it "increases the number of topics by 1" do
-      expect{ post :create, topic: {string: Faker::StarWars.character} }.to change(Topic,:count).by(1)
+      expect{ post :create, topic: {title: Faker::StarWars.character} }.to change(Topic,:count).by(1)
     end
 
     it "assigns Topic.last to @topic" do
-      post :create, topic: {string: Faker::StarWars.character}
+      post :create, topic: {title: Faker::StarWars.character}
       expect(assigns(:topic)).to eq Topic.last
     end
 
     it "redirects back to topics index path" do
-      post :create, topic: {string: Faker::StarWars.character}
+      post :create, topic: {title: Faker::StarWars.character}
       expect(response).to redirect_to topics_path
     end
   end

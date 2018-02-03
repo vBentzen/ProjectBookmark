@@ -12,7 +12,9 @@ class TopicsController < ApplicationController
   end
 
   def create
-    @topic = Topic.new(topic_params)
+    @topic = Topic.new
+    @topic.title = params[:topic][:title]
+    @topic.user = current_user
 
     if @topic.save
       redirect_to topics_path, notice: "Topic was created!"

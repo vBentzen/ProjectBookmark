@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1 class="txtmid">All Topics</h1>
+    <div class="text-center">
+      <%= link_to "New Topic", new_topic_path, class: 'btn btn-success' %>
+    </div>
+    <% @topics.each do |topic| %>
+      <div class="row">
+        <div class="col-md-12">
+          <h4> <%= link_to topic.title, topic %></h4>
+<!--
+          # bookmarks belonging to said topic should be displayed here.
+          #  @topic.bookmarks.each do |bookmark| %>
+          # <div class="col-md 1"> bookmark picture or something</div>
+          # Like button?
+          #  end %>
+          #  end %>
+-->
+      </div>
+    </div>
+      <% end %>
+  </div>
+</div>

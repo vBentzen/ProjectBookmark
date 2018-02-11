@@ -8,11 +8,15 @@
     </div>
   </div>
 </div>
-<!--
-          # bookmarks belonging to said topic should be displayed here.
-          #  @topic.bookmarks.each do |bookmark| %>
-          # <div class="col-md 1"> bookmark picture or something</div>
-          # Like button?
-          #  end %>
-          #  end %>
--->
+
+<br><br>
+
+<div class="row">
+  <% @topic.bookmarks.each do |bookmark| %>
+    <div class="col-md-4">
+      <div class="row">
+        <%= bookmark.url %>
+      </div>
+    </div>
+  <% end %>
+</div>

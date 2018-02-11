@@ -15,15 +15,26 @@
 end
 users = User.all
 
-# Create items
+# Create Topics
 10.times do
   Topic.create!(
       user: users.sample,
       title: Faker::WorldOfWarcraft.hero,
-      created_at: "2017-11-29  10:31:00",
+      created_at: "2017-11-29  10:31:00"
+  )
+end
+topics = Topic.all
+
+# Create bookmarks
+50.times do
+  Bookmark.create!(
+    topic: topics.sample,
+    url: Faker::Internet.url,
+    created_at: "2017-11-30 10:32:00"
   )
 end
 
 puts "Seed Finished"
 puts "#{User.count} users created"
 puts "#{Topic.count} topics created"
+puts "#{Bookmark.count} bookmarks created"
